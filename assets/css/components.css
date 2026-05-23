@@ -210,7 +210,10 @@
 .nav-overlay {
     display: none;
     position: fixed;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     background: rgba(0, 0, 0, 0.5);
     z-index: var(--z-overlay);
     opacity: 0;
@@ -305,6 +308,8 @@
     letter-spacing: 0.08em;
     text-transform: uppercase;
     cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
     /* Touch target mínimo */
     min-height: 44px;
     white-space: nowrap;
@@ -319,7 +324,10 @@
 .btn::before {
     content: '';
     position: absolute;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     background: var(--color-accent);
     transform: scaleX(0);
     transform-origin: left center;
@@ -362,7 +370,8 @@
 
 /* — HERO — */
 .hero {
-    min-height: 100svh; /* svh: mejor en móvil que 100vh */
+    min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     align-items: center;
     position: relative;
@@ -482,7 +491,10 @@
 .scroll-line::after {
     content: '';
     position: absolute;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     background: var(--color-text-primary);
     animation: scrollLine 2.4s ease-in-out infinite;
 }
@@ -665,13 +677,21 @@
 .project-image {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 10;
+    padding-bottom: 62.5%; /* fallback 16:10 para Safari < 15 */
+    height: 0;
     overflow: hidden;
     background: var(--color-surface-light);
     transition: transform 0.5s var(--ease-out);
 }
 
-.project-card-large .project-image { aspect-ratio: 21 / 9; }
+@supports (aspect-ratio: 1) {
+    .project-image {
+        padding-bottom: 0;
+        height: auto;
+        aspect-ratio: 16 / 10;
+    }
+    .project-card-large .project-image { aspect-ratio: 21 / 9; }
+}
 
 .project-card:hover .project-image { transform: scale(1.03); }
 
@@ -754,7 +774,10 @@
 .project-image::after {
     content: '';
     position: absolute;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     background: linear-gradient(180deg, transparent 55%, rgba(13,12,10,0.65) 100%);
     pointer-events: none;
 }
@@ -1168,7 +1191,10 @@ a.contact-value:hover { color: var(--color-accent); }
 .whatsapp-fab::before {
     content: '';
     position: absolute;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     border-radius: inherit;
     border: 2px solid rgba(37, 211, 102, 0.6);
     animation: waPulse 2.8s ease-out infinite;
