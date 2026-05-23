@@ -166,7 +166,7 @@
             entries.forEach(({ target, isIntersecting }) => {
                 if (!isIntersecting) return;
                 const end    = parseInt(target.dataset.counter, 10);
-                const suffix = target.dataset.suffix ?? '';
+                const suffix = target.dataset.suffix !== undefined ? target.dataset.suffix : '';
                 const dur    = 1800;
                 const t0     = performance.now();
 
