@@ -1,0 +1,105 @@
+/* ==========================================================================
+   ANIMATIONS.CSS — Keyframes, reveal system, cursor glow, ripple
+   ========================================================================== */
+
+/* — KEYFRAMES — */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(2.5rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.94);
+        filter: blur(6px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+/* — REVEAL SYSTEM — */
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(2.5rem);
+    transition:
+        opacity   0.9s var(--ease-out),
+        transform 0.9s var(--ease-out);
+}
+
+[data-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger por nth-child dentro de grids */
+.servicios-grid   [data-reveal]:nth-child(2) { transition-delay: 0.08s; }
+.servicios-grid   [data-reveal]:nth-child(3) { transition-delay: 0.16s; }
+.servicios-grid   [data-reveal]:nth-child(4) { transition-delay: 0.24s; }
+
+.proyectos-grid   [data-reveal]:nth-child(2) { transition-delay: 0.10s; }
+.proyectos-grid   [data-reveal]:nth-child(3) { transition-delay: 0.20s; }
+.proyectos-grid   [data-reveal]:nth-child(4) { transition-delay: 0.30s; }
+
+.testimonios-grid [data-reveal]:nth-child(2) { transition-delay: 0.10s; }
+.testimonios-grid [data-reveal]:nth-child(3) { transition-delay: 0.20s; }
+
+/* — CURSOR GLOW (solo pantallas con mouse preciso) — */
+.cursor-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 70%;
+    background: radial-gradient(circle, var(--color-accent-glow), transparent 70%);
+    pointer-events: none;
+    z-index: 9998;
+    will-change: transform;
+    mix-blend-mode: screen;
+    opacity: 0;
+    transition:
+        opacity 0.3s ease,
+        width   0.35s var(--ease-bounce),
+        height  0.35s var(--ease-bounce);
+}
+
+.cursor-glow.is-active { opacity: 1; }
+.cursor-glow.is-hover  { width: 72px; height: 72px; }
+
+/* Ocultar en modo claro (blend-mode no aplica bien sobre fondos claros) */
+[data-theme="light"] .cursor-glow {
+    mix-blend-mode: multiply;
+    opacity: 0 !important;
+}
+
+/* Ocultar en pantallas táctiles */
+@media (hover: none), (pointer: coarse) {
+    .cursor-glow { display: none; }
+}
+
+/* — RIPPLE EN BOTONES — */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--color-accent-glow);
+    pointer-events: none;
+    transform: scale(0);
+    animation: rippleExpand 0.55s linear forwards;
+}
+
+@keyframes rippleExpand {
+    to {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}

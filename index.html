@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es-CR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Proci-Ram S.R.L — Edificios, residencias e infraestructura con más de 10 años de experiencia en San Carlos, Costa Rica.">
+    <meta name="theme-color" content="#0d0c0a" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f5f0e8" media="(prefers-color-scheme: light)">
+    <title>Proci-Ram S.R.L — Construcción de Excelencia | San Carlos, Costa Rica</title>
+
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website">
+    <meta property="og:title"       content="Proci-Ram S.R.L — Construcción de Excelencia">
+    <meta property="og:description" content="Más de 10 años de experiencia en San Carlos, Costa Rica. Proyectos comerciales, residenciales e infraestructura con calidad garantizada.">
+    <meta property="og:locale"      content="es_CR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary">
+    <meta name="twitter:title"       content="Proci-Ram S.R.L — Construcción de Excelencia">
+    <meta name="twitter:description" content="Más de 10 años de experiencia en San Carlos, Costa Rica. Proyectos comerciales, residenciales e infraestructura con calidad garantizada.">
+
+    <!-- Seguridad -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; font-src 'self'; script-src 'self'; img-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; worker-src 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <link rel="preload" href="assets/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/css/fonts.css">
+
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <noscript><style>[data-reveal]{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+    <!-- Skip to main content — Accesibilidad -->
+    <a href="#main-content" class="skip-link">Saltar al contenido</a>
+
+    <canvas id="particleCanvas" role="presentation" aria-hidden="true"></canvas>
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <header class="header" role="banner">
+        <div class="container header-content">
+            <a href="#" class="logo" aria-label="Prociram — Inicio">
+                <span class="logo-mark" aria-hidden="true">◣</span>
+                <span class="logo-text">Proci<span class="logo-accent">-Ram S.R.L</span></span>
+            </a>
+
+            <nav class="nav" id="main-nav" aria-label="Navegación principal">
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#proyectos" class="nav-link">Proyectos</a>
+                <a href="#testimonios" class="nav-link">Testimonios</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </nav>
+
+            <div class="header-actions">
+                <!-- Botón modo día/noche -->
+                <button
+                    class="theme-toggle"
+                    id="themeToggle"
+                    aria-label="Cambiar a modo claro"
+                    title="Cambiar tema"
+                    type="button"
+                >
+                    <span class="theme-icon theme-icon--sun" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="4.5"/>
+                            <line x1="12" y1="2"     x2="12" y2="5"/>
+                            <line x1="12" y1="19"    x2="12" y2="22"/>
+                            <line x1="4.22" y1="4.22"   x2="6.34" y2="6.34"/>
+                            <line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/>
+                            <line x1="2"  y1="12"    x2="5"  y2="12"/>
+                            <line x1="19" y1="12"    x2="22" y2="12"/>
+                            <line x1="4.22" y1="19.78"  x2="6.34" y2="17.66"/>
+                            <line x1="17.66" y1="6.34"  x2="19.78" y2="4.22"/>
+                        </svg>
+                    </span>
+                    <span class="theme-icon theme-icon--moon" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </span>
+                </button>
+
+                <button class="btn btn-primary btn-sm" data-scroll-to="contacto" type="button">
+                    Cotizar
+                </button>
+
+                <!-- Botón menú móvil -->
+                <button
+                    class="nav-toggle"
+                    id="navToggle"
+                    aria-controls="main-nav"
+                    aria-expanded="false"
+                    aria-label="Abrir menú de navegación"
+                    type="button"
+                >
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Overlay menú móvil -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <main id="main-content">
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="container">
+                <div class="hero-meta" data-reveal>
+                    <span class="hero-divider" aria-hidden="true"></span>
+                    <span class="hero-tag">Dedicados a la excelencia en construcción SanCarleña</span>
+                </div>
+
+                <h1 class="hero-title" id="hero-heading" data-reveal>
+                    Construimos Ideas<br>
+                    Con Excelencia
+                </h1>
+
+                <div class="hero-cta" data-reveal>
+                    <button class="btn btn-primary btn-large" data-scroll-to="proyectos" type="button">
+                        <span>Ver Proyectos</span>
+                        <span class="btn-arrow" aria-hidden="true">→</span>
+                    </button>
+                    <button class="btn btn-ghost btn-large" data-scroll-to="servicios" type="button">
+                        Servicios
+                    </button>
+                </div>
+
+                <div class="hero-stats" data-reveal>
+                    <div class="hero-stat">
+                        <span class="hero-stat-num" data-counter="60" data-suffix="+">60+</span>
+                        <span class="hero-stat-label">Proyectos entregados</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-num" data-counter="10" data-suffix="">10</span>
+                        <span class="hero-stat-label">Años de experiencia</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-num" data-counter="100" data-suffix="%">100%</span>
+                        <span class="hero-stat-label">Clientes satisfechos</span>
+                    </div>
+                </div>
+            </div>
+
+                <span class="hero-deco" aria-hidden="true">Build</span>
+        </section>
+
+        <section id="servicios" class="section servicios" aria-labelledby="servicios-heading">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <span class="section-eyebrow">/ 01 — Servicios</span>
+                    <h2 class="section-title" id="servicios-heading">
+                        Soluciones <span class="accent-text">integrales</span> en construcción
+                    </h2>
+                </div>
+
+                <div class="servicios-grid">
+                    <article class="service-card" data-reveal>
+                        <span class="service-num" aria-hidden="true">01</span>
+                        <h3>Construcción Comercial</h3>
+                    </article>
+
+                    <article class="service-card" data-reveal>
+                        <span class="service-num" aria-hidden="true">02</span>
+                        <h3>Proyectos Residenciales</h3>
+                    </article>
+
+                    <article class="service-card" data-reveal>
+                        <span class="service-num" aria-hidden="true">03</span>
+                        <h3>Reformas Integrales</h3>
+                    </article>
+
+                    <article class="service-card" data-reveal>
+                        <span class="service-num" aria-hidden="true">04</span>
+                        <h3>Infraestructura</h3>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyectos" class="section proyectos" aria-labelledby="proyectos-heading">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <span class="section-eyebrow">/ 02 — Portafolio</span>
+                    <h2 class="section-title" id="proyectos-heading">
+                        Proyectos <span class="accent-text">destacados</span>
+                    </h2>
+                </div>
+
+                <div class="proyectos-grid">
+                    <article class="project-card project-card-large" data-reveal>
+                        <div class="project-image" data-bg="commercial" role="img" aria-label="Centro Comercial Metropolitan">
+                            <span class="project-badge">Comercial</span>
+                            <div class="project-overlay" aria-hidden="true">
+                                <span class="project-cta">Ver detalles →</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Centro Comercial Metropolitan</h3>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-reveal>
+                        <div class="project-image" data-bg="residential" role="img" aria-label="Torres Lumina Residencial">
+                            <span class="project-badge">Residencial</span>
+                            <div class="project-overlay" aria-hidden="true">
+                                <span class="project-cta">Ver detalles →</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Torres Lumina</h3>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-reveal>
+                        <div class="project-image" data-bg="reform" role="img" aria-label="Boutique Heritage">
+                            <span class="project-badge">Reforma</span>
+                            <div class="project-overlay" aria-hidden="true">
+                                <span class="project-cta">Ver detalles →</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Boutique Heritage</h3>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-reveal>
+                        <div class="project-image" data-bg="office" role="img" aria-label="Hub Corporativo TechZone">
+                            <span class="project-badge">Oficinas</span>
+                            <div class="project-overlay" aria-hidden="true">
+                                <span class="project-cta">Ver detalles →</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Hub Corporativo TechZone</h3>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonios" class="section testimonios" aria-labelledby="testimonios-heading">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <span class="section-eyebrow">/ 03 — Confianza</span>
+                    <h2 class="section-title" id="testimonios-heading">
+                        Lo que dicen <span class="accent-text">nuestros clientes</span>
+                    </h2>
+                </div>
+
+                <div class="testimonios-placeholder" aria-hidden="true">
+                    <span class="testimonios-placeholder-quote">"</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="section contacto" aria-labelledby="contacto-heading">
+            <div class="container">
+                <div class="contacto-content" data-reveal>
+                    <span class="section-eyebrow">/ 04 — Contacto</span>
+                    <h2 class="section-title" id="contacto-heading">
+                        Construyamos <span class="accent-text">algo grande.</span>
+                    </h2>
+                    <div class="contacto-cta">
+                        <button class="btn btn-primary btn-large" type="button">
+                            <span>Solicitar cotización</span>
+                            <span class="btn-arrow" aria-hidden="true">→</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="logo" aria-label="Proci-Ram S.R.L — Inicio">
+                        <span class="logo-mark" aria-hidden="true">◣</span>
+                        <span class="logo-text">Proci<span class="logo-accent">-Ram S.R.L</span></span>
+                    </a>
+                    <p>Construcción de excelencia para Costa Rica.</p>
+                </div>
+
+                <div class="footer-cols">
+                    <div class="footer-col">
+                        <h4>Empresa</h4>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contacto</h4>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Redes</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p><small>&copy; <span id="footer-year">2026</span> Proci-Ram S.R.L. Todos los derechos reservados.</small></p>
+                
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp FAB -->
+    <a
+        href="https://wa.me/50622000000?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n."
+        class="whatsapp-fab"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contactar por WhatsApp"
+    >
+        <svg class="whatsapp-fab__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        <span class="whatsapp-fab__label" aria-hidden="true">Escríbenos</span>
+    </a>
+
+    <script src="assets/js/particles.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
